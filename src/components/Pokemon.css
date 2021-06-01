@@ -1,0 +1,66 @@
+.card {
+    padding: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.col {
+    margin-left: 5px;
+}
+
+.row {
+    padding-left: 5px;
+}
+
+.h5 {
+    font-size: medium;
+}
+
+.pokemon-name-and-type {
+    padding: 0;
+    padding-top: 5px;
+}
+
+.pokemon-name {
+    padding: 0;
+}
+
+.pokemon-type {
+    padding: 0;
+}
+
+.picture-info{
+    max-width: 200px;
+}
+
+.status-location {
+    padding-left: 0;
+}
+
+.status-progress {
+    width: 90%;
+    padding: 0;
+}
+
+.status-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0;
+}
+
+.status-container {
+    padding: 0;
+}
+
+.status-row {
+    padding: 0;
+}
+
+.text {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0;
+    justify-content: center;
+}
