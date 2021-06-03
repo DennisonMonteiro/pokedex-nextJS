@@ -1,4 +1,4 @@
-import { Container, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import './App.css';
 import HomePage from './view/HomePage';
 

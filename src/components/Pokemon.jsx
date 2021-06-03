@@ -2,10 +2,10 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import PokemonBadge from './PokemonBadge'
 import './Pokemon.css'
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 
-export default props => {
+const Pokemon = props => {
 
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -16,7 +16,7 @@ export default props => {
             <Row>
                 <Col className="picture-info">
                     <Row style={{ backgroundColor: "#F2F2F2", width: "125px"  }}>
-                        <Card.Img src={ props.pokemon.sprites.front_default } roundedCircle  />
+                        <Card.Img src={ props.pokemon.sprites.front_default }/>
                     </Row>
                     <Row className="pokemon-name-and-type" >
                         <Card.Title className="pokemon-name" >No. { props.pokemon.id } - { capitalizeFirstLetter(props.pokemon.name) }</Card.Title>
@@ -93,3 +93,5 @@ export default props => {
         </Card>
     )
 }
+
+export default Pokemon

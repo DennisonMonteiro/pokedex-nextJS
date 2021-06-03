@@ -2,7 +2,7 @@ import React from 'react';
 import Badge from 'react-bootstrap/Badge'
 import './PokemonBadge.css'
 
-export default props => {
+const PokemonBadge = props => {
 
     const pokeBadges = {
         "bug": "#729F3F",
@@ -33,7 +33,7 @@ export default props => {
                 </Badge>
                 :
                 <>
-                    <Badge pill style={{ background: pokeBadges [props.types[0].type.name ] }}>
+                    <Badge pill style={{ background: pokeBadges[props.types[0].type.name ] }}>
                         { props.types[0].type.name.toUpperCase() }
                     </Badge>
                     <Badge pill style={{ background: pokeBadges[ props.types[1].type.name ] }}>
@@ -45,3 +45,5 @@ export default props => {
         
     )
 }
+
+export default PokemonBadge
