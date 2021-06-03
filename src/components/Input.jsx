@@ -22,19 +22,18 @@ const Input = props => {
     }
 
     return(
-        <InputGroup className="mb-3">
-            <FormControl
+        <div className="input-container"  >
+            <input type="text"
                 placeholder="Search a pokemon..."
                 aria-label="Search a pokemon..."
                 aria-describedby="basic-addon2"
                 value={ text }
                 onChange={ handleChange }
                 onKeyDown={ handleKeyDown }
-            />
-            <InputGroup.Append>
-                <Button variant="outline-secondary" onClick={ handleButton } >Search</Button>
-            </InputGroup.Append>
-        </InputGroup>
+                className="input-bar" />
+            <button className="input-filter-button" >Filter</button>
+            <button className="input-button" onClick={ handleButton } >Search</button>
+        </div>
     )
 }
 

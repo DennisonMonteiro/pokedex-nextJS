@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import Pokemon from '../components/Pokemon';
 import Spinner from 'react-bootstrap/Spinner'
 import './HomePage.css'
@@ -42,8 +42,10 @@ const HomePage = () => {
             </div>
         ) : (
           <>
-            <Input sendText={ handleTextSended } ></Input>
-            <Row>
+            <Row className="input-row">
+              <Input sendText={ handleTextSended } ></Input>              
+            </Row>
+            <Row className="card-row">
                 { pokemonSearch !== "" ? (
                     pokemon.filter( p => p.data.name === pokemonSearch ).map( filteredPokemon => (
                       <Col key={filteredPokemon.data.id} xs={12} sm={12} md={12} lg={6} xl={4}>

@@ -5,11 +5,9 @@ import HomePage from './view/HomePage';
 function App() {
 
   return (
-    <div  className="App">
-      <Row>
+    <Row className="app" >
         <HomePage></HomePage>
-      </Row>
-    </div>
+    </Row>
   );
 }
 
