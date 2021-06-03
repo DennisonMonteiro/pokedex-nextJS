@@ -6,7 +6,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import './HomePage.css'
 import Input from '../components/Input';
 
-function HomePage() {
+const HomePage = () => {
 
   const [pokemon, setPokemon] = useState([])
   const [loading, setLoading] = useState(true)
