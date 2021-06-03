@@ -27,7 +27,7 @@ function HomePage() {
   }
 
   const handleTextSended = ( pokemon ) => {
-    setpokemonSearch( pokemon )
+    setpokemonSearch( pokemon.toLowerCase() )
   }  
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function HomePage() {
             <Input sendText={ handleTextSended } ></Input>
             <Row>
                 { pokemonSearch !== "" ? (
-                    pokemon.filter( p => p.data.name === { pokemonSearch } ).map( filteredPokemon => (
+                    pokemon.filter( p => p.data.name === pokemonSearch ).map( filteredPokemon => (
                       <Col key={filteredPokemon.data.id} xs={12} sm={12} md={12} lg={6} xl={4}>
                           <Pokemon pokemon={filteredPokemon.data} ></Pokemon>
                       </Col>
