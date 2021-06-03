@@ -11,6 +11,12 @@ const Input = props => {
         setText(e.target.value)
     }
 
+    const handleKeyDown = (e) => {
+        if( e.key === 'Enter' ) {
+            props.sendText( text )
+        }
+    }
+
     const handleButton = () => {
         props.sendText( text )
     }
@@ -22,7 +28,8 @@ const Input = props => {
                 aria-label="Search a pokemon..."
                 aria-describedby="basic-addon2"
                 value={ text }
-                onChange= { handleChange }
+                onChange={ handleChange }
+                onKeyDown={ handleKeyDown }
             />
             <InputGroup.Append>
                 <Button variant="outline-secondary" onClick={ handleButton } >Search</Button>
