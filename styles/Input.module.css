@@ -1,0 +1,40 @@
+.input_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.input_bar {
+    padding: 3px;
+    border: 1px solid;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.input_bar:focus {
+    outline: none;
+}
+
+.input_field {
+    width: 50%;
+    margin-right: 0.5rem;
+}
+
+.search_button {
+    border: 1px solid;
+    border-radius: 10px;
+    background: rgb(238, 237, 237);
+}
+
+.search_button:focus {
+    outline: none;
+}
+
+.search_button:hover {
+    background-color: lightgray;
+}
+
+.search_button:active {
+    background-color: rgb(197, 195, 195);
+}
+
