@@ -11,7 +11,7 @@ interface PokemonList {
     pokemon: Pokemon,
 }
 
-function CardContent({ pokemon }: PokemonList) {
+function CardContent({ pokemon }: any) { //ts error in pokemonList type. Future correction
 
     return(
         <div className={styles.card}>
