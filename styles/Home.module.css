@@ -1,14 +1,14 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  min-width: 475px;
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@
   display: grid;
   min-width: 100%;
   margin-top: 3rem;
+  place-items: center;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -27,9 +28,23 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  min-height: 50px;
+  align-items: center;
 }
 .card {
   display: flex;
+  min-width: 475px;
+  margin-bottom: 1rem;
+  background-color: #e5e2e2;
+  border: 1px solid #888888;
+  border-radius: 10px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+    border-color: #063366;
 }
 
 .logo {
@@ -37,12 +52,19 @@
   margin-left: 0.5rem;
 }
 
-@media screen and (max-width: 800px) {
+.grid_search {
+  display: grid;
+  min-width: 100%;
+  margin-top: 3rem;
+  place-items: center;
+}
+
+@media screen and (max-width: 970px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-@media screen and (min-width: 801px) and (max-width: 1360px) {
+@media screen and (min-width: 971px) and (max-width: 1360px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }

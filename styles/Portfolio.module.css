@@ -1,0 +1,22 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    min-width: 475px;
+}
+
+.main {
+    padding: 2rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.main p{
+    font-weight: 400;
+    font-size: larger;
+}

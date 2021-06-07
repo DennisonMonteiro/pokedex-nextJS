@@ -1,18 +1,33 @@
 .header {
-    position: absolute;
     display: flex;
     width: 100%;
-    height: 50px;
+    min-height: 4rem;
     background: tomato;
+    align-items: center;
+    max-height: min-content;
 }
 
-.header .container {
-	width: 100%;
-	margin: 0 auto;
+.logo {
     display: flex;
-	align-items: center;
-	justify-content: space-around;
-	flex-wrap: wrap;
+    height: 100%;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.logo a{
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: center;
+}
+
+.main_nav {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 1rem;
 }
 
 .nav_list ul {
@@ -29,6 +44,54 @@
     border-radius: 5px;
 }
 
-.nav_list a:hover {
+.nav_list a:hover .nav_list a:focus, .nav_list a:active {
     background-color: rgb(228, 84, 59);
+}
+
+.icon {
+    display: none;
+    font-size: 20px;
+    color: #f2f2f2;
+}
+
+.dropdown_items {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    width: 100%;
+}
+
+.dropdown_item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.top_links {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 970px) {
+
+    .main_nav {
+        display: none;
+    }
+
+    .icon {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 1rem;
+        height: 100%;
+    }
+
 }

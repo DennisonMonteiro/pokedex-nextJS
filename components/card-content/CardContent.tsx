@@ -1,26 +1,28 @@
 import React from 'react'
 import styles from '../../styles/CardContent.module.css'
-import { Pokemon } from '../../types/Pokemon'
-
 import Image from 'next/image'
 
+import { Pokemon } from '../../types/Pokemon'
+import { Weakness } from '../../types/Weakness'
 import { formatPokemonName, formatHeight } from '../../utils/commonFunctions'
 import PokemonBadge from '../pokemon-badge/PokemonBadge'
-import { ProgressBar } from 'react-bootstrap'
 
 interface PokemonList {
-    pokemon: Pokemon
+    pokemon: Pokemon,
 }
 
 function CardContent({ pokemon }: PokemonList) {
-
 
     return(
         <div className={styles.card}>
             <div className={styles.image_column}>
                 <div className={styles.image}>
                     <Image 
-                        src={ pokemon.sprites.versions['generation-v']['black-white'].animated.front_default }
+                        src={ pokemon.sprites.versions['generation-v']['black-white'].animated.front_default !== null ?
+                            pokemon.sprites.versions['generation-v']['black-white'].animated.front_default
+                            :
+                            pokemon.sprites.front_default
+                        }
                         layout={"fixed"}
                         width={96}
                         height={96}
@@ -37,7 +39,7 @@ function CardContent({ pokemon }: PokemonList) {
                 </div>
             </div>
             <div className={styles.status_column}>
-                <div className={styles.title}>
+                <div className={styles._description}>
                     Base status:
                 </div>
                 <div className={styles.status_field}>
@@ -111,11 +113,6 @@ function CardContent({ pokemon }: PokemonList) {
                             <div className={styles.title_info}>
                                 { `${formatHeight(pokemon.weight)} Kg` }
                             </div>
-                        </div>
-                    </div>
-                    <div className={styles.weakness_row}>
-                        <div className={styles.weakness}>
-                            weakness_row
                         </div>
                     </div>
                 </div>

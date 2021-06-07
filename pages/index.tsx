@@ -1,9 +1,7 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
 import { useState } from 'react'
+import styles from '../styles/Home.module.css'
 import { Pokemon } from '../types/Pokemon'
-
 import Header from '../components/header/Header'
 import Input from '../components/input-bar/Input'
 import CardContent from '../components/card-content/CardContent'
@@ -32,13 +30,31 @@ function Home({ pokemonList }: PokemonList) {
         <div className={styles.input_row}>
           <Input sendText={ handleTextSended }></Input>
         </div>
-        <div className={styles.grid}>
-          { pokemonList.map((pokemon: Pokemon) => (
-            <div key={pokemon.id} className={styles.card}>
-              <CardContent pokemon={ pokemon } ></CardContent>
+        { pokemonSearch !== "" ?
+          (
+            <div className={styles.grid_search}>
+              {
+                pokemonList.filter( p => p.name === pokemonSearch ).map((pokemon: Pokemon) => (
+                  <div key={pokemon.id} className={styles.card}>
+                    <CardContent pokemon={ pokemon }></CardContent>
+                  </div>
+                ))
+              }
             </div>
-          )) }
-        </div>
+          )
+          :
+          (
+            <div className={styles.grid}>
+            {
+              pokemonList.map((pokemon: Pokemon) => (
+                <div key={pokemon.id} className={styles.card}>
+                  <CardContent pokemon={ pokemon }></CardContent>
+                </div>
+              ))
+            }
+            </div>
+          )
+        }
       </main>
     </div>
   )
@@ -46,7 +62,8 @@ function Home({ pokemonList }: PokemonList) {
 
 export async function getStaticProps() {
   let pokemonList: Pokemon[] = []
-  for(let id = 1; id <= 151; id++) {
+
+  for(let id = 1; id <= 898; id++) { //898 total in pokeAPI
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     const pokemon = await res.json()
     pokemonList.push(pokemon)
@@ -54,7 +71,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pokemonList,
+      pokemonList
     }
   }
 }
