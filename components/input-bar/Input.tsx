@@ -29,7 +29,7 @@ function Input( props: props ){
                 <input 
                     type="text"
                     className={styles.input_bar}
-                    placeholder="Search a pokemon..."
+                    placeholder="Search one of 898 pokemons..."
                     value={ text }
                     onChange={ handleChange }
                     onKeyDown={ handleKeyDown }
